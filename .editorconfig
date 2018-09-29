@@ -1,0 +1,15 @@
+# 配置编辑器使用习惯
+# 生效
+root = true
+# 对所有编码都有效
+[*]
+# 编码规则
+charset = utf-8
+# 缩进
+indent_style = tabs
+# 缩进尺寸
+indent_size = 2
+
+
+
+# Tip: 为使以上配置生效还需添加Editor Configer for vscode插件
