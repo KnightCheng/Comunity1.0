@@ -20,5 +20,13 @@ module.exports = {
     config.resolve.alias
       .set('@', resolve('src')) // 将@符号代表src当前目录
       .set('_c', resolve('src/components')) // 将_c符号代表src/components当前目录
+  },
+  // 打包时不生成.map文件 减少打包时文件的体积，提升打包速度
+  productionSourceMap: false,
+
+  // 设置代理服务器，来满足跨域的需求（这只是解决跨域的其中一种方式）
+
+  devServer: {
+    proxy: 'http://localhost:4000'
   }
 }
