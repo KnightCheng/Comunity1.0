@@ -16,7 +16,7 @@ module.exports = {
   // 定义项目的基本路径
   baseUrl: BASE_URL,
   // 颗粒化的配置webpack
-  chainWepack: config => {
+  chainWebpack: config => {
     config.resolve.alias
       .set('@', resolve('src')) // 将@符号代表src当前目录
       .set('_c', resolve('src/components')) // 将_c符号代表src/components当前目录
@@ -27,6 +27,9 @@ module.exports = {
   // 设置代理服务器，来满足跨域的需求（这只是解决跨域的其中一种方式）
 
   devServer: {
+    // 此处用于修改端口
+    port: 8081,
     proxy: 'http://localhost:4000'
+    // 此处设置代理服务器
   }
 }

@@ -1,9 +1,14 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <!-- router-link 本质封装了a标签 to指定的值是一个路径 -->
+      <!-- <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> -->
+
+      <router-link :to="{ name: 'home' }">Home</router-link> |
+      <router-link :to="{ name: 'about' }">About</router-link>
     </div>
+    <!-- router-view组件，是视图渲染组件 -->
     <router-view/>
   </div>
 </template>
