@@ -21,12 +21,24 @@ export default {
       default: 'Apple'
     }
   },
+  // 组件即将进入的时候
   beforeRouteEnter (to, from, next) {
     console.log(from.name)
     // vm组件实例，在next方法之前不能用this. 因为只有调用next方法，组件才会渲染
-    next(vm => {
-      console.log(vm)
+    next(vm => { 
+      //console.log(vm)
     })
+  },
+  // 组件即将离开的时候，常用于确认操作
+  beforeRouteLeave (to, from, next){
+    // 
+    const leave=confirm('您确定要离开吗？')
+    if (leave) next()
+    else next(false)
+  },
+  // 组件被复用时，执行
+  beforeRouteUpdate (to, from, next) {
+    console.log(to.name, from.name)
   },
   methods: {
     handleClick(type) {
@@ -53,3 +65,4 @@ export default {
   }
 }
 </script>
+

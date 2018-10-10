@@ -30,6 +30,9 @@ export default [
     component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue'),
     props: {
       food: 'banana'
+    },
+    meta: {
+      title: '关于'
     }
   },
   // 动态路由匹配
@@ -64,6 +67,11 @@ export default [
       console.log(to)
       return '/'
     }
+  },
+  {
+    path: '/store',
+    component: () => import('@/views/store.vue')
+
   },
   // 路由别名 添加alias： 属性即可
 
